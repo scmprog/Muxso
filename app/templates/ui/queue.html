@@ -1,0 +1,31 @@
+{% extends "ui/playback.html" %}
+
+{% block header %}
+<!-- <header>
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">g
+		</a>
+
+</header> -->
+{% endblock %}
+<!-- Start of first page -->
+{% block queue %}
+<div data-role="page" id="queue" data-theme="b" data-content-theme="b">
+
+	<div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+		<!-- <a href="#" data-icon="refresh" data-mini="true" data-iconpos="notext" class="ui-btn-right" id="queue-refresh"></a> -->
+		<a href="#" class="ui-btn ui-btn-inline ui-corner-all  ui-icon-refresh ui-btn-icon-notext ui-nodisc-icon"
+			id="queue-new">New</a>
+		<a href="#" class="ui-nodisc-icon ui-btn ui-corner-all ui-icon-rotate-right ui-btn-icon-notext ui-nodisc-icon "
+			id="queue-refresh">refresh</a>
+		<h1></h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div data-role="content" id='queue-content' class="swipe">
+		</div>
+	</div>
+	{% block footer%}
+	{{super()}}
+	{% endblock %}
+</div>
+{% endblock %}

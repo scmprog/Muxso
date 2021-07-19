@@ -1,0 +1,175 @@
+{% extends "ui/base.html" %}
+
+{%block header%}
+<!-- <header>
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">
+		</a>
+	</div>
+</header> -->
+{%endblock%}
+{%block playback%}
+<div data-role="page" id="playback" data-theme="b" data-content-theme="b">
+
+	<div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+		<a href="#" id='upload' data-rel="popup" data-position-to="window" data-transition="pop"
+			class="ui-btn ui-btn-inline ui-corner-all  ui-icon-folder-o ui-btn-icon-notext ui-nodisc-icon "
+			id="playback-new">upload</a>
+		<a href="#settings" class="ui-btn ui-btn-inline ui-corner-all  ui-icon-gear ui-btn-icon-notext ui-nodisc-icon "
+			id="playback-settings">settings</a>
+		<h1></h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div data-role="content" id='playback-content' class="swipe">
+			<div>
+				<a href="#" class="ui-btn ui-icon-file-o ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-corner-all"
+					data-theme="b" class="ui-nodisc-icon">playing</a>
+				<h5 id="playing" class="ui-btn-inline"></h5>
+				<a href="#" class="ui-btn ui-icon-clock-o ui-btn-icon-notext ui-nodisc-icon ui-btn-inline ui-corner-all"
+					data-theme="b" class="ui-nodisc-icon">playing</a>
+				<h5 id="time" class="ui-btn-inline"></h5>
+			</div>
+			<div>
+				<a href="#" id="like" data-theme="b"
+					class="ui-btn ui-icon-heart-o ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-inline">like</a>
+				<a href="#" id="rm" data-theme="b"
+					class="ui-btn ui-icon-trash-o ui-btn-icon-notext ui-nodisc-icon ui-corner-all ui-btn-inline">rm</a>
+			</div>
+
+			<div data-role="controlgroup" data-type="horizontal" data-mini="true">
+				<a href="#" id="prev" data-theme="b"
+					class="ui-btn ui-icon-step-backward ui-btn-icon-notext ui-nodisc-icon">prev</a>
+				<a href="#" id="state" data-theme="b" class="ui-btn  ui-btn-icon-notext ui-nodisc-icon">state</a>
+				 <a href="#" id="next" data-theme="b"
+					class="ui-btn ui-icon-step-forward ui-btn-icon-notext ui-nodisc-icon">next</a>
+			</div>
+		</div>
+	</div>
+	<div id="upload-d">
+
+	</div>
+	<!-- <div data-role="popup" id="upload" data-theme="b" class="ui-corner-all">
+		<div style="padding:3px 20px;">
+			<form id="upload" action="/playback/upload" method="POST" enctype="multipart/form-data">
+				<label for="song">File:</label>
+				<input type="file" name="file">
+				<button type="submit" class="ui-btn ui-mini saved">upload</button>
+			</form>
+		</div>
+	</div> -->
+	<!-- end main -->
+
+	{% block footer %}
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="b">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#queue" data-transition="none" data-role="button" data-icon="list-ul" data-iconpos="top"
+						class="ui-nodisc-icon">Queue</a>
+				</li>
+				<li><a href="#browse" data-transition="none" data-role="button" data-icon="search" data-iconpos="top"
+						class="ui-nodisc-icon">Browse</a>
+				</li>
+				<li><a href="#playlists" data-transition="none" data-role="button" data-icon="align-left"
+						data-iconpos="top" class="ui-nodisc-icon">Playlists</a></li>
+				<li><a href="#playback" data-transition="none" data-role="button" data-icon="music" data-iconpos="top"
+						class="ui-nodisc-icon">Song</a></li>
+			</ul>
+		</div>
+	</div>
+	{% endblock %}
+</div>
+
+<div data-role="page" id="settings" data-theme="b" data-content-theme="b">
+	<div data-role="header">
+		<a href="#" data-rel="back"
+			class="ui-btn ui-btn-inline ui-corner-all  ui-icon-back ui-btn-icon-notext ui-nodisc-icon "
+			id="content-new">back</a>
+		<!-- 
+		<a href="#" class="ui-btn ui-btn-inline ui-corner-all  ui-icon-check ui-btn-icon-notext ui-nodisc-icon"
+			id="content-enqueue">Enqueue</a> -->
+		<h1></h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div data-role="content" id='setting-content'>
+			<ul data-role="listview" data-dividertheme="b">
+				<!-- CURRENT PLAYLIST -->
+				<li data-role="list-divider">CP</li>
+				<li class="ui-mini ui-btn">
+					<a href="#" id="clear" class="ui-icon-check">Clear</a>
+				</li>
+				<li class="ui-mini ui-btn ">
+					<a href="#save" data-rel="popup" data-position-to="window" class="ui-icon-save"
+						data-transition="pop">Save</a>
+				</li>
+				<!-- LIBRARY -->
+				<li data-role="list-divider">LB</li>
+				<li class="ui-mini ui-btn">
+					<a href="#" id="reset" class="ui-icon-check">Delete</a>
+				</li>
+				<!-- PLAYLIST -->
+				<li data-role="list-divider">PL</li>
+				<li class="ui-mini ui-btn">
+					<a href="#" id="edit" class="ui-icon-edit ui-disabled">Edit</a>
+				</li>
+				<!-- Preference -->
+				<!-- PRIVACY -->
+				<li data-role="list-divider">List</li>
+				<form>
+					<fieldset class="ui-field-contain">
+						<label for="flip-1">&nbsp;&nbsp;&nbsp;Privacy</label>
+						<select name="flip-1" id="flip-1" data-role="slider" data-mini="true">
+							<option value="0">Off</option>
+							<option value="1">On</option>
+						</select>
+					</fieldset>
+				</form>
+				<!-- PER PAGE -->
+				<form id="per_page">
+					<div class="ui-field-contain">
+						<label for="number-2">&nbsp;&nbsp;&nbsp;Page</label>
+						<input type="number" data-clear-btn="true" name="paging" pattern="[0-9]*" id="paging" value="">
+					</div>
+				</form>
+				<li data-role="list-divider">PB</li>
+				<form>
+					<fieldset class="ui-field-contain">
+						<label for="flip-2">&nbsp;&nbsp;&nbsp;Cast</label>
+						<select name="flip-2" id="flip-2" data-role="slider" data-mini="true">
+							<option value="0">Off</option>
+							<option value="1">On</option>
+						</select>
+					</fieldset>
+				</form>
+				<div class="ui-field-contain">
+					<label for="vol">&nbsp;&nbsp;&nbsp;Volume</label>
+					<input class="ui-hidden-accessible" type="range" name="vol" id="vol" value="25" min="0" max="100"
+						data-highlight="true" data-mini="true" />
+				</div>
+				<form id="repeat">
+					<div class="ui-field-contain">
+						<label for="repeat">&nbsp;&nbsp;&nbsp;Repeat.x</label>
+						<input type="number" data-clear-btn="true" name="repeat" pattern="[0-9]*" id="repeatx" value="">
+					</div>
+				</form>
+			</ul>
+		</div>
+
+	</div>
+
+	<!-- <div data-role="footer">
+		  <p>Click above link or X button to close the dialog</p>
+		</div> -->
+	<div data-role="popup" id="save" data-theme="b" class="ui-corner-all">
+		<form id='save-form'>
+			<div style="padding:3px 20px;">
+				 <a href="#" data-rel="back"
+					class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+				<label for="plname">Name</label>
+				     <input type="text" data-mini="true" name="plname" id="plname" value="">
+				<button type="submit" class="ui-btn ui-mini saved">save</button>
+			</div>
+			    
+		</form>
+	</div>
+</div>
+{%endblock%}

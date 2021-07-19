@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{% block head %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="{{ url_for('static', filename='js/jqm/jquery.mobile-1.4.5.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='js/jqm/jquery.mobile.icons-1.4.5.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='js/dist/jqm-icon-pack-fa.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/jqm-icon-pack-fa.css') }}" rel="stylesheet">
+	<!-- 
+	<link href="{{ url_for('static', filename='js/font-awesome-4.7.0/css/font-awesome.css') }}" rel="stylesheet"> -->
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery/jquery-1.11.1.min.js') }}"></script>
+
+	<script type="text/javascript" type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jqm/jquery.mobile-1.4.5.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/socketio/socket.io.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/event.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/howler/howler.core.js') }}" defer></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/sync.js') }}" defer></script>
+	<script type="text/javascript" type="module" src="{{ url_for('static', filename='js/playback.js') }}"></script>
+
+	<title> {% block title %} {% endblock %} Mdisc</title>
+	{% endblock %}
+</head>
+
+{% block header %}
+
+{% endblock %}
+
+<body>
+
+	{% block playback %}
+
+	{% endblock %}
+
+	{% block queue %}
+
+	{% endblock %}
+
+	{% block library %}
+
+	{% endblock %}
+
+	{% block playlist %}
+
+	{% endblock %}
+
+	{%block upload%}
+
+	{%endblock%}
+
+</body>
+
+</html>

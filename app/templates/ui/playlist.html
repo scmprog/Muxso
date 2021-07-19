@@ -1,0 +1,50 @@
+{% extends "ui/library.html" %}
+
+{%block header%}
+<!-- <header>
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">
+		</a>
+	</div>
+</header> -->
+{%endblock%}
+{%block playlist%}
+<div data-role="page" id="playlists" data-theme="b" data-content-theme="b">
+
+	<div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+		<a href="#" class="ui-btn ui-btn-inline ui-corner-all  ui-icon-refresh ui-btn-icon-notext ui-nodisc-icon "
+			id="playlist-new">Scan</a>
+
+		<a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-rotate-right ui-btn-icon-notext ui-nodisc-icon "
+			id="playlist-refresh">Refresh</a>
+		<h1></h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div data-role="content" id='playlist-content' class="swipe">
+		</div>
+	</div>
+	<!-- end main -->
+	{% block footer%}
+	{{super()}}
+	{% endblock %}
+</div>
+
+<div data-role="page" id="playlist-content" data-theme="b" data-content-theme="b">
+	<div data-role="header">
+		<a href="#" data-rel="back"
+			class="ui-btn ui-btn-inline ui-corner-all  ui-icon-back ui-btn-icon-notext ui-nodisc-icon "
+			id="content-new">back</a>
+
+		<a href="#" class="ui-btn ui-btn-inline ui-corner-all  ui-icon-check ui-btn-icon-notext ui-nodisc-icon"
+			id="content-enqueue">Enqueue</a>
+		<h1></h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div data-role="content" id='list-content'>
+		</div>
+	</div>
+	<!-- <div data-role="footer">
+		  <p>Click above link or X button to close the dialog</p>
+		</div> -->
+</div>
+{%endblock%}

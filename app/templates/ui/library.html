@@ -1,0 +1,30 @@
+{% extends "ui/queue.html" %}
+
+{%block header%}
+<!-- <header>
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/">
+		</a>
+	</div>
+</header> -->
+{%endblock%}
+{%block library%}
+<div data-role="page" id="browse" data-theme="b" data-content-theme="b">
+
+	<div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+		<a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-rotate-right ui-btn-icon-notext ui-nodisc-icon "
+			id="lib-ref">refresh</a>
+		<a href="#" class="ui-btn ui-btn-inline ui-corner-all  ui-icon-check ui-btn-icon-notext ui-nodisc-icon "
+			id="lib-load">Load</a>
+		<h1></h1>
+	</div>
+	<div data-role="main" class="ui-content">
+		<div data-role="content" id='lib-content' class="swipe">
+		</div>
+	</div>
+	<!-- end main -->
+	{% block footer%}
+	{{super()}}
+	{% endblock %}
+</div>
+{%endblock%}
