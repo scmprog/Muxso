@@ -8,7 +8,7 @@ The software has three components: A centralized music server daemon, a Flask/Py
 - Mobile friendly user interface
 - Remote control playback
 - Synchronization of playback
-- Http radio streaming
+- Radio streaming
 - Privacy mode
 - RepeatX
 
