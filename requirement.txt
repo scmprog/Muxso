@@ -1,0 +1,5 @@
+python-mpd2==3.0.4
+python-engineio==2.0.4
+python-socketio==1.9.0
+Flask==0.12.2
+eventlet==0.24.1
