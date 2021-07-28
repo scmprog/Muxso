@@ -24,5 +24,7 @@ The software has three components: A centralized music server daemon, a Flask/Py
 - now the app can be access using [YourIP]:[PORT] for example 192.168.43.1:8080
 
 # Screenshot
-![127 0 0 1_5000_(iPhone 4) (1)](https://user-images.githubusercontent.com/87179125/127266588-92712bbf-d2a5-42a3-88d6-97566a75d42d.png)
-![127 0 0 1_5000_(iPhone 4)](https://user-images.githubusercontent.com/87179125/127266603-cff80089-4f10-4d3c-9570-9d12ee262465.png)
+![127 0 0 1_5000_(iPhone 4) (4)](https://user-images.githubusercontent.com/87179125/127266952-1c359fb5-b768-458f-8a7e-194b36e9e25d.png)
+
+![127 0 0 1_5000_(iPhone 4) (3)](https://user-images.githubusercontent.com/87179125/127267067-ae3bca75-98f6-4c4f-a18d-38ecdbda4e3d.png)
+
