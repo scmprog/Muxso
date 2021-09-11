@@ -1,7 +1,7 @@
 # Muxso (Share and Listen together)
 
 # Introduction
-Muxso is web based Music Multiplexer with special focus on sharing and discovering of music.
+Muxso is a web based Music Multiplexer with special focus on sharing and discovering of music.
 
 There’s nothing like listening to your favorite playlist together with friends. That's why Muxso was created to allowed groups of users to listen and control their music with others in real time. It provides shared opportunities for collaboration among all the listeners, you and the members can each share and listen to the same content at the same time on a single ouput devices (Speaker) or stream it on your own devices. Users can pause, play, skip, and select tracks on the queue as well as add their own. If one person makes a change, it will immediately be reflected on all connected devices.
 
